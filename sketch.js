@@ -21,7 +21,7 @@ function setup() {
   textFont(myFont);
   textSize(width / 3);
   textAlign(CENTER, CENTER);
-  text('the water is fine');
+  text('the water is fine',0,0);
   
   pixelDensity(1);
   let cnv = createCanvas(500, 700);
