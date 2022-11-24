@@ -50,7 +50,7 @@ function mouseReleased() {
 
 function draw() {
   background(0);
-  if(frameCount % 10 == 0) {
+  if(frameCount % 50 == 0) {
     generateRipple();
   }
   loadPixels();
@@ -84,12 +84,12 @@ function generateRipple() {
   let pick = random(4);
   
   if (pick < 1) {
-    previous[5][int(5,random(rows-5))] = 1000;
+    previous[5][int(random(5,rows-5))] = 1000;
   } else if (pick < 2) {
-    previous[cols-5][int(5,random(rows-5))] = 1000;
+    previous[cols-5][int(random(5,rows-5))] = 1000;
   } else if (pick < 3) {
-    previous[int(5,random(cols-5))][5] = 1000;
+    previous[int(random(5,cols-5))][5] = 1000;
   } else {
-    previous[int(5,random(cols-5))][rows-5] = 1000;
+    previous[int(random(5,cols-5))][rows-5] = 1000;
   }
 }
