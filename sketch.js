@@ -41,7 +41,7 @@ function mouseDragged() {
 }
 
 function startSound() {
-//   sound1.loop();
+  sound1.loop();
   sound2.loop();
   loop();
 }
