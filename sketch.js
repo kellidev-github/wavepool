@@ -47,9 +47,9 @@ function draw(){
     text('tap and drag to play', width/2, height/2);
     return;
   }
-//   // map the horizontal position of the mouse to values useable for volume    *  control of sound1
-//   var sound1Volume = constrain(map(mouseX,width,0,0,1), 0, 1);
-//   var sound2Volume = 1-sound1Volume;
+  // map the horizontal position of the mouse to values useable for volume    *  control of sound1
+  var sound1Volume = constrain(map(mouseX,width,0,0,1), 0, 1);
+  var sound2Volume = 1-sound1Volume;
 //   sound1Gain.amp(sound1Volume);
 //   sound2Gain.amp(sound2Volume);
 //   // map the vertical position of the mouse to values useable for 'output    *  volume control'
