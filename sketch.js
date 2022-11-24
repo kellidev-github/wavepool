@@ -23,6 +23,10 @@ function setup() {
   
   sound1.loop();
   loop();
+  let sound1Volume = 1;
+  let sound2Volume = 0;
+  sound1Gain.amp(sound1Volume);
+  sound2Gain.amp(sound2Volume);
 }
 function startSound() {
   sound1.loop();
