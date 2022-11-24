@@ -3,24 +3,19 @@
 // https://thecodingtrain.com/CodingChallenges/102-2d-water-ripple.html
 // https://youtu.be/BZUdGqeOD0w
 // https://editor.p5js.org/codingtrain/sketches/tYXtzNSl
+
 // Algorithm: https://web.archive.org/web/20160418004149/http://freespace.virgin.net/hugo.elias/graphics/x_water.htm
+
 let cols;
 let rows;
 let current; // = new float[cols][rows];
 let previous; // = new float[cols][rows];
+
 let dampening = 0.99;
-// load two soundfile and crossfade beetween them
-let sound1,sound2;
-function preload(){
-  soundFormats('ogg', 'mp3');
-  sound1 = loadSound('Underwater_Pool-Mike_Koenig-355864284.mp3');
-  sound2 = loadSound('Children Playing-SoundBible.com-591301488.mp3');
-}
 
 function setup() {
   pixelDensity(1);
-  let cnv = createCanvas(500, 700);
-  cnv.mousePressed(startSound);
+  createCanvas(500, 600);
   cols = width;
   rows = height;
   // The following line initializes a 2D cols-by-rows array with zeroes
@@ -30,31 +25,14 @@ function setup() {
   previous = new Array(cols).fill(0).map(n => new Array(rows).fill(0));
 }
 
-function generateRipple() {
-  previous[0][int(random(rows))] = 2000;
-  previous[cols-1][int(random(rows))] = 2000;
-  previous[int(random(cols))][0] = 2000;
-  previous[int(random(cols))][rows-1] = 2000;
-}
-
 function mouseDragged() {
   previous[mouseX][mouseY] = 2500;
 }
 
-function startSound() {
-  sound1.loop();
-  sound2.loop();
-  loop();
-}
-function mouseReleased() {
-//   sound1.stop();
-  sound2.pause();
-}
 function draw() {
   background(0);
 
   loadPixels();
-  generateRipple();
   for (let i = 1; i < cols - 1; i++) {
     for (let j = 1; j < rows - 1; j++) {
       current[i][j] =
@@ -75,8 +53,17 @@ function draw() {
     }
   }
   updatePixels();
+
   let temp = previous;
   previous = current;
   current = temp;
+
   
+}
+
+function generateRipple() {
+  previous[0][int(random(rows))] = 2000;
+  previous[cols-1][int(random(rows))] = 2000;
+  previous[int(random(cols))][0] = 2000;
+  previous[int(random(cols))][rows-1] = 2000;
 }
