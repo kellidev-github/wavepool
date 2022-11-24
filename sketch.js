@@ -22,8 +22,7 @@ function setup() {
   textFont(myFont);
   textSize(width / 3);
   textAlign(CENTER, CENTER);
-  
-  
+    
   pixelDensity(1);
   let cnv = createCanvas(500, 700);
   cnv.mousePressed(startSound);
@@ -37,8 +36,10 @@ function setup() {
 }
 
 function generateRipple() {
-  previous[int(random(0.1*cols))][int(random(0.1*rows))] = 2500;
-  previous[int(random(0.9*cols,cols))][0.1*int(random(0.9*rows,rows))] = 2500;
+  previous[0][int(random(rows))] = 2000;
+  previous[cols-1][int(random(rows))] = 2000;
+  previous[int(random(cols))][0] = 2000;
+  previous[int(random(cols))][rows-1] = 2000;
 }
 
 function mouseDragged() {
