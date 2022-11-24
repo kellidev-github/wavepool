@@ -25,7 +25,7 @@ function preload(){
 
 function setup() {
   pixelDensity(1);
-  let cnv = createCanvas(500, 600);
+  let cnv = createCanvas(500, 700);
   cnv.mousePressed(startSound);
   cols = width;
   rows = height;
