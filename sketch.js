@@ -20,6 +20,8 @@ function setup() {
   sound2Gain = new p5.Gain();
   sound2Gain.setInput(sound2);
   sound2Gain.connect(mixGain);
+  
+  sound1.loop();
 }
 function startSound() {
   sound1.loop();
