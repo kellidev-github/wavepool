@@ -37,7 +37,7 @@ function setup() {
 }
 
 function mouseDragged() {
-  previous[mouseX][mouseY] = 2550;
+  previous[mouseX][mouseY] = 2500;
 }
 
 function startSound() {
@@ -70,8 +70,8 @@ function draw() {
       // set the entries for each color component separately.
       let index = (i + j * cols) * 4;
       pixels[index + 0] = 102+current[i][j];
-      pixels[index + 1] = 200+current[i][j];
-      pixels[index + 2] = 200+current[i][j];
+      pixels[index + 1] = 250+current[i][j];
+      pixels[index + 2] = 250+current[i][j];
     }
   }
   updatePixels();
