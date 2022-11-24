@@ -22,6 +22,7 @@ function setup() {
   sound2Gain.connect(mixGain);
   
   sound1.loop();
+  loop();
 }
 function startSound() {
   sound1.loop();
