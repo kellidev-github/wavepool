@@ -17,11 +17,12 @@ function preload(){
   sound2 = loadSound('Children Playing-SoundBible.com-591301488.mp3');
   myFont = loadFont('SpecialElite-Regular.ttf');
 }
+
 function setup() {
   textFont(myFont);
   textSize(width / 3);
   textAlign(CENTER, CENTER);
-  text('the water is fine',0,0);
+  
   
   pixelDensity(1);
   let cnv = createCanvas(500, 700);
@@ -36,7 +37,8 @@ function setup() {
 }
 
 function generateRipple() {
-  previous[int(random(cols))][int(random(rows))] = 2500;
+  previous[int(random(0.1*cols))][int(random(0.1*rows))] = 2500;
+  previous[int(random(0.9*cols,cols))][0.1*int(random(0.9*rows,rows))] = 2500;
 }
 
 function mouseDragged() {
@@ -54,6 +56,7 @@ function mouseReleased() {
 }
 function draw() {
   background(0);
+  text('the water is fine',0,0);
   loadPixels();
   generateRipple();
   for (let i = 1; i < cols - 1; i++) {
