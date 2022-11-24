@@ -15,9 +15,14 @@ function preload(){
   soundFormats('ogg', 'mp3');
   sound1 = loadSound('Underwater_Pool-Mike_Koenig-355864284.mp3');
   sound2 = loadSound('Children Playing-SoundBible.com-591301488.mp3');
-  
+  inconsolata = loadFont('assets/inconsolata.otf');
 }
 function setup() {
+  textFont(inconsolata);
+  textSize(width / 3);
+  textAlign(CENTER, CENTER);
+  text('the water is fine');
+  
   pixelDensity(1);
   let cnv = createCanvas(500, 700);
   cnv.mousePressed(startSound);
@@ -29,6 +34,11 @@ function setup() {
   current = new Array(cols).fill(0).map(n => new Array(rows).fill(0));
   previous = new Array(cols).fill(0).map(n => new Array(rows).fill(0));
 }
+
+function generateRipple() {
+  previous[random(cols)][random(rows)] = 2500;
+}
+
 function mouseDragged() {
   previous[mouseX][mouseY] = 2500;
 }
@@ -45,6 +55,7 @@ function mouseReleased() {
 function draw() {
   background(0);
   loadPixels();
+  generateRipple();
   for (let i = 1; i < cols - 1; i++) {
     for (let j = 1; j < rows - 1; j++) {
       current[i][j] =
