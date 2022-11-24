@@ -36,7 +36,7 @@ function setup() {
 }
 
 function generateRipple() {
-  previous[random(cols)][random(rows)] = 2500;
+  previous[int(random(cols))][int(random(rows))] = 2500;
 }
 
 function mouseDragged() {
