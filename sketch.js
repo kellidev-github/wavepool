@@ -28,8 +28,8 @@ function setup() {
   sound2Gain.amp(0);
   mixGain.amp(outputVolume);
   
-  drown.loop(); // song is ready to play during setup() because it was loaded during preload
-  children.loop();
+//   drown.loop(); // song is ready to play during setup() because it was loaded during preload
+//   children.loop();
 }
 
 function draw(){
