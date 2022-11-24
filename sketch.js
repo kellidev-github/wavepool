@@ -11,7 +11,7 @@ let rows;
 let current; // = new float[cols][rows];
 let previous; // = new float[cols][rows];
 
-let dampening = 0.991;
+let dampening = 0.99;
 
 // load two soundfile and crossfade beetween them
 let sound1,sound2;
@@ -37,7 +37,7 @@ function setup() {
 }
 
 function mouseDragged() {
-  previous[mouseX][mouseY] = 2500;
+  previous[mouseX][mouseY] = 2550;
 }
 
 function startSound() {
