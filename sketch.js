@@ -1,4 +1,3 @@
-@@ -1,17 +1,17 @@
 // 2D Water Ripples
 // The Coding Train / Daniel Shiffman
 // https://thecodingtrain.com/CodingChallenges/102-2d-water-ripple.html
@@ -10,7 +9,7 @@ let rows;
 let current; // = new float[cols][rows];
 let previous; // = new float[cols][rows];
 
-let dampening = 0.999;
+let dampening = 0.99;
 
 // load two soundfile and crossfade beetween them
 let sound1,sound2;
