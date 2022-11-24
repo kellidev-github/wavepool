@@ -5,6 +5,7 @@ function preload(){
   soundFormats('ogg', 'mp3');
   sound1 = loadSound('Underwater_Pool-Mike_Koenig-355864284.mp3');
   sound2 = loadSound('Children Playing-SoundBible.com-591301488.mp3');
+  sound1.play();
 }
 function setup() {
   let cnv = createCanvas(100, 100);
@@ -20,6 +21,8 @@ function setup() {
   sound2Gain = new p5.Gain();
   sound2Gain.setInput(sound2);
   sound2Gain.connect(mixGain);
+  
+  
 }
 function startSound() {
   sound1.loop();
@@ -49,8 +52,8 @@ function draw(){
   mixGain.amp(outputVolume);
   text('output', width/2, height - outputVolume * height * 0.9)
   fill(255, 0, 255);
-  textAlign(LEFT);
-  text('sound1', 5, height - sound1Volume * height * 0.9);
-  textAlign(RIGHT);
-  text('sound2', width - 5, height - sound2Volume * height * 0.9);
+//   textAlign(LEFT);
+//   text('sound1', 5, height - sound1Volume * height * 0.9);
+//   textAlign(RIGHT);
+//   text('sound2', width - 5, height - sound2Volume * height * 0.9);
 }
