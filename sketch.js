@@ -15,7 +15,7 @@ function preload(){
   soundFormats('ogg', 'mp3');
   sound1 = loadSound('Underwater_Pool-Mike_Koenig-355864284.mp3');
   sound2 = loadSound('Children Playing-SoundBible.com-591301488.mp3');
-  inconsolata = loadFont('assets/inconsolata.otf');
+  inconsolata = loadFont('https://fonts.googleapis.com/css?family=Tangerine');
 }
 function setup() {
   textFont(inconsolata);
