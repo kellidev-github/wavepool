@@ -11,8 +11,7 @@ function setup() {
   let cnv = createCanvas(100, 100);
   cnv.mousePressed(startSound);
   // create a 'mix' gain bus to which we will connect both soundfiles
-  sound1.play();
-  mixGain = new p5.Gain();
+    mixGain = new p5.Gain();
   mixGain.connect();
   sound1.disconnect(); // diconnect from p5 output
   sound1Gain = new p5.Gain(); // setup a gain node
@@ -22,8 +21,7 @@ function setup() {
   sound2Gain = new p5.Gain();
   sound2Gain.setInput(sound2);
   sound2Gain.connect(mixGain);
-  
-  
+    
 }
 function startSound() {
   sound1.loop();
@@ -39,8 +37,9 @@ function draw(){
   textAlign(CENTER);
   textSize(11);
   fill(0);
-  if (!sound1.isPlaying()) {
+  if (!sound2.isPlaying()) {
     text('tap and drag to play', width/2, height/2);
+    sound2.play();
     return;
   }
   // map the horizontal position of the mouse to values useable for volume    *  control of sound1
