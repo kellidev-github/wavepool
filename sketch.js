@@ -5,12 +5,13 @@ function preload(){
   soundFormats('ogg', 'mp3');
   sound1 = loadSound('Underwater_Pool-Mike_Koenig-355864284.mp3');
   sound2 = loadSound('Children Playing-SoundBible.com-591301488.mp3');
-  sound1.play();
+  
 }
 function setup() {
   let cnv = createCanvas(100, 100);
   cnv.mousePressed(startSound);
   // create a 'mix' gain bus to which we will connect both soundfiles
+  sound1.play();
   mixGain = new p5.Gain();
   mixGain.connect();
   sound1.disconnect(); // diconnect from p5 output
