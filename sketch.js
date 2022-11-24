@@ -39,6 +39,7 @@ function draw(){
   fill(0);
   if (!sound1.isPlaying()) {
     sound1.play();
+    sound2.play();
     let sound1Volume = 1;
     let sound2Volume = 0;
     sound1Gain.amp(sound1Volume);
