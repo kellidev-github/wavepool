@@ -9,7 +9,7 @@ let rows;
 let current; // = new float[cols][rows];
 let previous; // = new float[cols][rows];
 
-let dampening = 0.9;
+let dampening = 0.99;
 
 // load two soundfile and crossfade beetween them
 let sound1,sound2;
