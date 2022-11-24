@@ -21,8 +21,7 @@ function setup() {
   sound2Gain.setInput(sound2);
   sound2Gain.connect(mixGain);
   
-  sound1.loop();
-  loop();
+  sound1.play();
   let sound1Volume = 1;
   let sound2Volume = 0;
   sound1Gain.amp(sound1Volume);
