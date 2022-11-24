@@ -9,7 +9,7 @@ let rows;
 let current; // = new float[cols][rows];
 let previous; // = new float[cols][rows];
 
-let dampening = 0.8;
+let dampening = 0.9;
 
 // load two soundfile and crossfade beetween them
 let sound1,sound2;
@@ -50,6 +50,9 @@ function mouseReleased() {
 
 function draw() {
   background(0);
+  if(frameCount % 10 == 0) {
+    generateRipple();
+  }
   loadPixels();
   for (let i = 1; i < cols - 1; i++) {
     for (let j = 1; j < rows - 1; j++) {
@@ -81,12 +84,12 @@ function generateRipple() {
   let pick = random(4);
   
   if (pick < 1) {
-    previous[0][int(random(rows))] = 1000;
+    previous[5][int(5,random(rows-5))] = 1000;
   } else if (pick < 2) {
-    previous[cols-1][int(random(rows))] = 1000;
+    previous[cols-5][int(5,random(rows-5))] = 1000;
   } else if (pick < 3) {
-    previous[int(random(cols))][0] = 1000;
+    previous[int(5,random(cols-5))][5] = 1000;
   } else {
-    previous[int(random(cols))][rows-1] = 1000;
+    previous[int(5,random(cols-5))][rows-5] = 1000;
   }
 }
