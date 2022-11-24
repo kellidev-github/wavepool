@@ -8,7 +8,7 @@ function preload(){
 }
 function setup() {
   let cnv = createCanvas(100, 100);
-  cnv.mousePressed(startSound);
+//   cnv.mousePressed(startSound);
   // create a 'mix' gain bus to which we will connect both soundfiles
   mixGain = new p5.Gain();
   mixGain.connect();
@@ -28,15 +28,15 @@ function setup() {
   sound1Gain.amp(sound1Volume);
   sound2Gain.amp(sound2Volume);
 }
-function startSound() {
-  sound1.loop();
-  sound2.loop();
-  loop();
-}
-function mouseReleased() {
-  sound1.stop();
-  sound2.stop();
-}
+// function startSound() {
+//   sound1.loop();
+//   sound2.loop();
+//   loop();
+// }
+// function mouseReleased() {
+//   sound1.stop();
+//   sound2.stop();
+// }
 function draw(){
   background(220);
   textAlign(CENTER);
