@@ -9,16 +9,17 @@ let rows;
 let current; // = new float[cols][rows];
 let previous; // = new float[cols][rows];
 
-let dampening = 0.99;
+let dampening = 0.8;
 
 // load two soundfile and crossfade beetween them
 let sound1,sound2;
+
 function preload(){
   soundFormats('ogg', 'mp3');
   sound1 = loadSound('Underwater_Pool-Mike_Koenig-355864284.mp3');
   sound2 = loadSound('Children Playing-SoundBible.com-591301488.mp3');
-  
 }
+
 function setup() {
   pixelDensity(1);
   let cnv = createCanvas(500, 700);
@@ -31,23 +32,24 @@ function setup() {
   current = new Array(cols).fill(0).map(n => new Array(rows).fill(0));
   previous = new Array(cols).fill(0).map(n => new Array(rows).fill(0));
 }
+
 function mouseDragged() {
   previous[mouseX][mouseY] = 2500;
 }
+
 function startSound() {
   sound1.loop();
   sound2.loop();
   loop();
 }
+
 function mouseReleased() {
 //   sound1.stop();
   sound2.pause();
 }
+
 function draw() {
   background(0);
-//   if (frameCount % 10 == 0) {
-//     generateRipple();
-//   }
   loadPixels();
   for (let i = 1; i < cols - 1; i++) {
     for (let j = 1; j < rows - 1; j++) {
