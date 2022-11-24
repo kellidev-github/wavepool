@@ -15,10 +15,10 @@ function preload(){
   soundFormats('ogg', 'mp3');
   sound1 = loadSound('Underwater_Pool-Mike_Koenig-355864284.mp3');
   sound2 = loadSound('Children Playing-SoundBible.com-591301488.mp3');
-  inconsolata = loadFont('https://fonts.googleapis.com/css?family=Special+Elite');
+  myFont = loadFont('SpecialElite-Regular.ttf');
 }
 function setup() {
-  textFont(inconsolata);
+  textFont(myFont);
   textSize(width / 3);
   textAlign(CENTER, CENTER);
   text('the water is fine');
