@@ -27,6 +27,7 @@ function setup() {
   let sound2Volume = 0;
   sound1Gain.amp(sound1Volume);
   sound2Gain.amp(sound2Volume);
+  mixGain.amp(1);
 }
 // function startSound() {
 //   sound1.loop();
@@ -46,14 +47,14 @@ function draw(){
     text('tap and drag to play', width/2, height/2);
     return;
   }
-  // map the horizontal position of the mouse to values useable for volume    *  control of sound1
-  var sound1Volume = constrain(map(mouseX,width,0,0,1), 0, 1);
-  var sound2Volume = 1-sound1Volume;
-  sound1Gain.amp(sound1Volume);
-  sound2Gain.amp(sound2Volume);
-  // map the vertical position of the mouse to values useable for 'output    *  volume control'
-  var outputVolume = constrain(map(mouseY,height,0,0,1), 0, 1);
-  mixGain.amp(outputVolume);
+//   // map the horizontal position of the mouse to values useable for volume    *  control of sound1
+//   var sound1Volume = constrain(map(mouseX,width,0,0,1), 0, 1);
+//   var sound2Volume = 1-sound1Volume;
+//   sound1Gain.amp(sound1Volume);
+//   sound2Gain.amp(sound2Volume);
+//   // map the vertical position of the mouse to values useable for 'output    *  volume control'
+//   var outputVolume = constrain(map(mouseY,height,0,0,1), 0, 1);
+//   mixGain.amp(outputVolume);
   text('output', width/2, height - outputVolume * height * 0.9)
   fill(255, 0, 255);
   textAlign(LEFT);
