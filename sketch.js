@@ -1,4 +1,4 @@
-// 2D Water Ripples
+l// 2D Water Ripples
 // The Coding Train / Daniel Shiffman
 // https://thecodingtrain.com/CodingChallenges/102-2d-water-ripple.html
 // https://youtu.be/BZUdGqeOD0w
@@ -15,7 +15,7 @@ function preload(){
   soundFormats('ogg', 'mp3');
   sound1 = loadSound('Underwater_Pool-Mike_Koenig-355864284.mp3');
   sound2 = loadSound('Children Playing-SoundBible.com-591301488.mp3');
-  inconsolata = loadFont('https://fonts.googleapis.com/css?family=Tangerine');
+  inconsolata = loadFont('https://fonts.googleapis.com/css?family=Special+Elite');
 }
 function setup() {
   textFont(inconsolata);
