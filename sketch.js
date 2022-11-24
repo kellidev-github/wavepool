@@ -1,4 +1,4 @@
-l// 2D Water Ripples
+// 2D Water Ripples
 // The Coding Train / Daniel Shiffman
 // https://thecodingtrain.com/CodingChallenges/102-2d-water-ripple.html
 // https://youtu.be/BZUdGqeOD0w
