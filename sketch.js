@@ -9,27 +9,25 @@ function preload() {
 
 function setup() {
   createCanvas(710, 200);
-  
+  drown.loop(); // song is ready to play during setup() because it was loaded during preload
+  children.loop();
   background(0, 255, 0);
   
   //REF: https://p5js.org/reference/#/p5.Gain
   // create a 'mix' gain bus to which we will connect both soundfiles
-//   mixGain = new p5.Gain();
-//   mixGain.connect();
-//   drown.disconnect(); // diconnect from p5 output
-//   sound1Gain = new p5.Gain(); // setup a gain node
-//   sound1Gain.setInput(drown); // connect the first sound to its input
-//   sound1Gain.connect(mixGain); // connect its output to the final mix bus
-//   children.disconnect();
-//   sound2Gain = new p5.Gain();
-//   sound2Gain.setInput(children);
-//   sound2Gain.connect(mixGain);
-//   sound1Gain.amp(1);
-//   sound2Gain.amp(0);
-//   mixGain.amp(outputVolume);
-  
-//   drown.loop(); // song is ready to play during setup() because it was loaded during preload
-//   children.loop();
+  mixGain = new p5.Gain();
+  mixGain.connect();
+  drown.disconnect(); // diconnect from p5 output
+  sound1Gain = new p5.Gain(); // setup a gain node
+  sound1Gain.setInput(drown); // connect the first sound to its input
+  sound1Gain.connect(mixGain); // connect its output to the final mix bus
+  children.disconnect();
+  sound2Gain = new p5.Gain();
+  sound2Gain.setInput(children);
+  sound2Gain.connect(mixGain);
+  sound1Gain.amp(1);
+  sound2Gain.amp(0);
+  mixGain.amp(outputVolume);
 }
 
 function draw(){
