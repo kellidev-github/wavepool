@@ -69,8 +69,8 @@ function draw() {
       // set the entries for each color component separately.
       let index = (i + j * cols) * 4;
       pixels[index + 0] = 102+current[i][j];
-      pixels[index + 1] = 200+current[i][j];
-      pixels[index + 2] = 200+current[i][j];
+      pixels[index + 1] = 200;
+      pixels[index + 2] = 200;
     }
   }
   updatePixels();
