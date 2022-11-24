@@ -48,7 +48,7 @@ function startSound() {
 
 function mouseReleased() {
 //   sound1.stop();
-  sound2.stop();
+  sound2.pause();
 }
 
 function draw() {
