@@ -79,9 +79,8 @@ function draw() {
 }
 
 function generateRipple() {
-  previous[int(random(5,cols-5))][int(random(5,rows-5))] = 1000;
-//   previous[5][int(random(5,rows-5))] = 2000;
-//   previous[cols-5][int(random(5,rows-5))] = 2000;
-//   previous[int(random(5,cols-5))][5] = 2000;
-//   previous[int(random(5,cols-5))][rows-5] = 2000;
+  previous[5][int(random(5,rows-5))] = 2500;
+  previous[cols-5][int(random(5,rows-5))] = 2500;
+  previous[int(random(5,cols-5))][5] = 2500;
+  previous[int(random(5,cols-5))][rows-5] = 2500;
 }
